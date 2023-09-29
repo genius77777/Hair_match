@@ -45,7 +45,7 @@ if __name__ == "__main__":
         name = img_path[:-4]
         # if name != "woman_bun1.1":
         #     continue
-        # HT.name2curves(fr"{name}",target_model_vs,fr"Out_hair_abc/{name}.abc")
+        # HT.name2curves(fr"{name}",target_model_vs,fr"Out_hair_curves/{name}.abc")
         HT.name2mesh(fr"{name}",target_model_vs,fr"Out_hair_mesh/{name}.obj")
     
     

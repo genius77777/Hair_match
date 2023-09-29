@@ -184,5 +184,6 @@ def transform(neutral_model_path,
         weight2knot_gpu = torch.tensor(roots_data['weight2knot'][:, None], dtype = torch.float16).to(device = 'cuda')
         # positions_np[:] = (root_position_np_gpu * (1 - weight2knot_gpu) + knot_position_np_gpu * weight2knot_gpu).cpu().numpy()
         positions_np[:] = (R_trans @ (root_position_np_gpu * (1 - weight2knot_gpu) + knot_position_np_gpu * weight2knot_gpu).cpu().numpy().T + T_trans).T
-
+        print(positions_np.shape)
+        print(out_mesh_paths[id_index])
         zlw.write_obj(template_path = hair_mesh_path, v = positions_np, path = out_mesh_paths[id_index])
